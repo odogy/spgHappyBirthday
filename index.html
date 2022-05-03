@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Thank You, SPG</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+	
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+		
+		#canvasDiv {
+			width: 100%;
+			height: 100%;
+		}
+		
+		#bgPicDiv {
+			width:100%;
+			height:100%;
+			position: absolute;
+			top: 0;
+			background-image: url('spg/bg.png');
+			background-size: cover;
+			opacity: 0.15;
+		}
+		
+		#introContainer {
+			width: 100%;
+			height: 100%;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		#intro {
+			max-width: 400px;
+		}
+		
+		#introHeader {
+			font-size: 26px;
+		}
+		
+		#introBody {
+			margin-top: 10px;
+			font-size: 18px;
+		}
+		
+		#introStart {
+			text-align: center;
+			margin-top: 20px;
+		}
+		
+		#introStart > button {
+			padding: 5px 10px;
+			font-size: 24px;
+		}
+		
+		#appContainer {
+			width: 100%;
+			height: 100%;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="introContainer">
+		<div id="intro">
+			<div id="introHeader">Dear SPG...</div>
+			<div id="introBody">You've brought us a great deal of joy through your
+				music. But your impact on our lives goes so much further. Over this past
+				year, we have formed lifelong friendships with people we met because of
+				you. These friendships have changed our lives. We wanted to find 
+				some way to show you just how significant this is. So we invited
+				members of this community to name 10 friends they believe they would never
+				have met if StringPlayerGamer was not a part of this world. As you might
+				guess, limiting to only 10 was really hard! Our lives are rich with
+				friendships for which you helped lay the foundation. Please click Start
+				to see a tiny fraction of the friendships that exist because of you.
+			</div>
+			<div id="introStart">
+				<button>Start</button>
+			</div>
+		</div>
+	</div>
+	
+	<div id="appContainer">
+		<div id="canvasDiv">
+			<canvas id="stageCanvas"></canvas>
+		</div>
+		<div id="bgPicDiv"></div>
+		
+		<audio style="display:none;" type="audio/mpeg"
+			src="./spg/goldenPearl.mp3" id="spgAudio"></audio>
+	</div>
+	
+	<script src="tests.js"></script>
+</body>
+</html>
