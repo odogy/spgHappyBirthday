@@ -90981,12 +90981,13 @@
         _displayFriends(name1, name2) {
             let tf = new Text(name1 + " and \n" + name2, {
                 // fontFamily: "Arial",
+                fontSize: 45,
                 fontFamily: "Exo 2, sans-serif",
                 align: "center"
             });
             let stage = this._pixiApp.stage;
             tf.x = Math.random() * (this.viewWidth - tf.width - 30) + 15;
-            tf.y = Math.random() * (this.viewHeight - 60) + 10;
+            tf.y = Math.random() * (this.viewHeight - 80) + 10;
             tf.alpha = 0;
             let tween = new Tween(tf)
                 .to({ alpha: 1.0 }, 3000)
