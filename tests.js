@@ -90968,21 +90968,33 @@
             this._audioEl.play();
         }
         _buildNamePairs() {
-            let namePairs = [];
-            let matchFound = true;
+            this._namePairs = [];
+            let checkForMoreEntries = true;
             let friendIdx = 0;
-            while (matchFound) {
-                matchFound = false;
+            while (checkForMoreEntries) {
+                checkForMoreEntries = false;
                 for (let user of this._users) {
                     if (user.friends[friendIdx] != null) {
-                        namePairs.push(user.friends[friendIdx], user.name);
-                        matchFound = true;
+                        let friend = user.friends[friendIdx];
+                        if (!this._pairExists(user.name, friend)) {
+                            this._namePairs.push(friend, user.name);
+                        }
+                        checkForMoreEntries = true;
                     }
                 }
                 friendIdx++;
             }
-            this._namePairs = namePairs;
-            this._friendInterval = this.audioDuration / (namePairs.length / 2);
+            this._friendInterval = this.audioDuration /
+                (this._namePairs.length / 2);
+        }
+        _pairExists(user, friend) {
+            for (let i = 0; i < this._namePairs.length; i += 2) {
+                if (this._namePairs[i] === user &&
+                    this._namePairs[i + 1] === friend) {
+                    return true;
+                }
+            }
+            return false;
         }
         _displayFriends(name1, name2) {
             let fontSize = (this.viewWidth < 600) ? 30 : 45;
@@ -91070,7 +91082,7 @@
             let users = [];
             let user = new User();
             user.name = "RecorderGuy";
-            user.friends.push("Chocol33t", "AludEleniza", "YaraDijkstar", "Meowsical", "Neo_Sis", "Pixaul", "RayMusica", "RachelGraceViolin", "TurkoMachine", "Prosolis");
+            user.friends.push("Chocol33t", "AludEleniza", "Yara", "Meowsical", "Neo_Sis", "Pixaul", "RayMusica", "RachelGraceViolin", "Turkomachine", "Prosolis");
             users.push(user);
             user = new User();
             user.name = "Yara";
@@ -91082,15 +91094,15 @@
             users.push(user);
             user = new User();
             user.name = "Radataz";
-            user.friends.push("NewBaroque", "Piefluff", "Firamiel", "Eravida", "HawkSixPhoenix", "Chocol33t", "Yara", "Neo_Sis", "RecorderGuy", "Pixaul");
+            user.friends.push("NewBaroque", "Piefluff", "Firamiel", "EraVida", "HawkSixPhoenix", "Chocol33t", "Yara", "Neo_Sis", "RecorderGuy", "Pixaul");
             users.push(user);
             user = new User();
-            user.name = "piefluff";
-            user.friends.push("FaeViolin/FaeMidway", "NewBaroque", "DradPunx", "Neo_Sis", "Pixaul", "MrXyden", "Firamiel", "Alud", "Maya", "Heathiekins");
+            user.name = "Piefluff";
+            user.friends.push("FaeViolin/FaeMidway", "NewBaroque", "DradPunx", "Neo_Sis", "Pixaul", "MrXyden", "Firamiel", "Alud", "Maya", "Heathie");
             users.push(user);
             user = new User();
             user.name = "RayMusica";
-            user.friends.push("Taledhar", "RecorderGuy", "RachelGraceViolin", "newbaroque", "AludEleniza", "arighi_violin", "piefluff", "Chocol33t", "Neo_Sis", "YaraDijkstar");
+            user.friends.push("Taledhar", "RecorderGuy", "RachelGraceViolin", "newbaroque", "AludEleniza", "arighi_violin", "Piefluff", "Chocol33t", "Neo_Sis", "YaraDijkstar");
             users.push(user);
             user = new User();
             user.name = "Taledhar";
@@ -91098,7 +91110,7 @@
             users.push(user);
             user = new User();
             user.name = "RachelGraceViolin";
-            user.friends.push("Turkomachine", "AludEleniza", "YaraDijkstar", "King_Zawa", "Orchkeystramusic", "Recorderguy", "Piefluff", "Firamiel", "Nescello", "Seven_Senshi");
+            user.friends.push("Turkomachine", "AludEleniza", "Yara", "King_Zawa", "Orchkeystramusic", "Recorderguy", "Piefluff", "Firamiel", "Nescello", "Seven_Senshi");
             users.push(user);
             user = new User();
             user.name = "Neo_Sis";
@@ -91114,7 +91126,7 @@
             users.push(user);
             user = new User();
             user.name = "Turkomachine";
-            user.friends.push("Manny", "Prosolis", "Neo_sis", "Maya", "Heathie", "Piefluff", "Chocol33t", "RachelGraceViolin", "Firamiel", "Yara");
+            user.friends.push("Manny", "Prosolis", "Neo_Sis", "Maya", "Heathie", "Piefluff", "Chocol33t", "RachelGraceViolin", "Firamiel", "Yara");
             users.push(user);
             user = new User();
             user.name = "Zossy";
@@ -91122,15 +91134,23 @@
             users.push(user);
             user = new User();
             user.name = "Tay Heavengreen";
-            user.friends.push("Arighi_Violin", "Alud Eleniza", "RachelGraceViolin", "Firamiel", "Manny", "Turkomachine", "DRad", "Chocol33t", "ManhandsLizzie", "King Zawa");
+            user.friends.push("Arighi_Violin", "AludEleniza", "RachelGraceViolin", "Firamiel", "Manny", "Turkomachine", "DRad", "Chocol33t", "ManhandsLizzie", "King Zawa");
             users.push(user);
             user = new User();
             user.name = "Maya";
             user.friends.push("Piefluff", "ViciousP85", "Turkomachine", "DRADPunx", "LearnMusic", "Composey", "MrXyden", "Neo_Sis", "Pixaul", "Newbaroque");
             users.push(user);
             user = new User();
+            user.name = "EraVida";
+            user.friends.push("Firamiel", "Fiktah", "Chocol33t", "Seven Senshi", "Prosolis", "MeowsicalVGM", "LearnMusic", "Turkomachine", "Piefluff", "Parlnock");
+            users.push(user);
+            user = new User();
             user.name = "BeanAwake";
             user.friends.push("MeowsicalVGM");
+            users.push(user);
+            user = new User();
+            user.name = "Pixaul";
+            user.friends.push("GFP");
             users.push(user);
             return users;
         }
