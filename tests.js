@@ -91083,12 +91083,15 @@
             user = new User();
             user.name = "Radataz";
             user.friends.push("NewBaroque", "Piefluff", "Firamiel", "Eravida", "HawkSixPhoenix", "Chocol33t", "Yara", "Neo_Sis", "RecorderGuy", "Pixaul");
+            users.push(user);
             user = new User();
             user.name = "piefluff";
             user.friends.push("FaeViolin/FaeMidway", "NewBaroque", "DradPunx", "Neo_Sis", "Pixaul", "MrXyden", "Firamiel", "Alud", "Maya", "Heathiekins");
+            users.push(user);
             user = new User();
             user.name = "RayMusica";
             user.friends.push("Taledhar", "RecorderGuy", "RachelGraceViolin", "newbaroque", "AludEleniza", "arighi_violin", "piefluff", "Chocol33t", "Neo_Sis", "YaraDijkstar");
+            users.push(user);
             user = new User();
             user.name = "Taledhar";
             user.friends.push("TheBlackCladWanderer", "Regent", "Babymage03", "LearnMusic", "Ginome", "dacswan", "DarkSaturn1983", "Parlnock", "natplaysstuff", "RayMusica");
