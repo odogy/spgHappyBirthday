@@ -90932,9 +90932,10 @@
             this._pairsIndex = 0;
             this._lastFriendDisplayTime = 0;
             this._tweens = [];
-            this.audioDuration = 250000;
+            this._endingMessageShown = false;
+            this.audioDuration = 244000;
             this._onAnimationFrame = () => {
-                if (this._pairsIndex < this._namePairs.length - 2) {
+                if (this._pairsIndex < this._namePairs.length - 1) {
                     let cTime = Date.now();
                     if (cTime >= this._startTime + this._pairsIndex / 2 *
                         this._friendInterval) {
@@ -90943,6 +90944,10 @@
                         this._displayFriends(this._namePairs[this._pairsIndex], this._namePairs[this._pairsIndex + 1]);
                         this._pairsIndex += 2;
                     }
+                }
+                else if (!this._endingMessageShown) {
+                    this._endingMessageShown = true;
+                    this._showEnding();
                 }
                 this._updateTweens();
                 window.requestAnimationFrame(this._onAnimationFrame);
@@ -90987,7 +90992,7 @@
             });
             let stage = this._pixiApp.stage;
             tf.x = Math.random() * (this.viewWidth - tf.width - 30) + 15;
-            tf.y = Math.random() * (this.viewHeight - 80) + 10;
+            tf.y = Math.random() * (this.viewHeight - 110) + 10;
             tf.alpha = 0;
             let tween = new Tween(tf)
                 .to({ alpha: 1.0 }, 3000)
@@ -91015,6 +91020,27 @@
             for (let tween of this._tweens) {
                 tween.update();
             }
+        }
+        _showEnding() {
+            let tf = new Text("Thank you, SPG!!!", {
+                fontSize: 70,
+                fontFamily: "Exo 2, sans-serif",
+                align: "center"
+            });
+            let stage = this._pixiApp.stage;
+            tf.x = (this.viewWidth - tf.width) / 2;
+            tf.y = (this.viewHeight - tf.height) / 2;
+            tf.alpha = 0;
+            let tween = new Tween(tf)
+                .to({ alpha: 1.0 }, 6000)
+                .easing(Easing.Cubic.In)
+                .onComplete(() => {
+                let idx = this._tweens.indexOf(tween);
+                this._tweens.splice(idx, 1);
+            })
+                .start();
+            this._tweens.push(tween);
+            stage.addChild(tf);
         }
         get viewWidth() {
             return this._pixiApp.view.parentElement.clientWidth;
