@@ -91105,7 +91105,7 @@
             users.push(user);
             user = new User();
             user.name = "Turkomachine";
-            user.friends.push("RachelGraceViolin", "Prosolis", "Neo_sis", "Maya", "Heathie", "Piefluff", "Chocol33t", "Manny", "Firamiel", "Yara");
+            user.friends.push("Manny", "Prosolis", "Neo_sis", "Maya", "Heathie", "Piefluff", "Chocol33t", "RachelGraceViolin", "Firamiel", "Yara");
             users.push(user);
             return users;
         }
