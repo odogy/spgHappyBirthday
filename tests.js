@@ -91110,7 +91110,7 @@
             users.push(user);
             user = new User();
             user.name = "RachelGraceViolin";
-            user.friends.push("Turkomachine", "AludEleniza", "Yara", "King_Zawa", "Orchkeystramusic", "Recorderguy", "Piefluff", "Firamiel", "Nescello", "Seven_Senshi");
+            user.friends.push("Turkomachine", "Alud", "Yara", "King_Zawa", "Orchkeystramusic", "RecorderGuy", "Piefluff", "Firamiel", "Nescello", "Seven_Senshi");
             users.push(user);
             user = new User();
             user.name = "Neo_Sis";
