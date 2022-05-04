@@ -91070,7 +91070,7 @@
             let users = [];
             let user = new User();
             user.name = "RecorderGuy";
-            user.friends.push("Chocol33t", "AludEleniza", "YaraDijkstar", "Piefluff", "Neo_Sis", "Pixaul", "RayMusica", "RachelGraceViolin", "TurkoMachine", "Prosolis");
+            user.friends.push("Chocol33t", "AludEleniza", "YaraDijkstar", "Meowsical", "Neo_Sis", "Pixaul", "RayMusica", "RachelGraceViolin", "TurkoMachine", "Prosolis");
             users.push(user);
             user = new User();
             user.name = "Yara";
@@ -91083,6 +91083,12 @@
             user = new User();
             user.name = "Radataz";
             user.friends.push("NewBaroque", "Piefluff", "Firamiel", "Eravida", "HawkSixPhoenix", "Chocol33t", "Yara", "Neo_Sis", "RecorderGuy", "Pixaul");
+            user = new User();
+            user.name = "piefluff";
+            user.friends.push("FaeViolin/FaeMidway", "NewBaroque", "DradPunx", "Neo_Sis", "Pixaul", "MrXyden", "Firamiel", "Alud", "Maya", "Heathiekins");
+            user = new User();
+            user.name = "RayMusica";
+            user.friends.push("Taledhar", "RecorderGuy", "RachelGraceViolin", "newbaroque", "AludEleniza", "arighi_violin", "piefluff", "Chocol33t", "Neo_Sis", "YaraDijkstar");
             user = new User();
             user.name = "Taledhar";
             user.friends.push("TheBlackCladWanderer", "Regent", "Babymage03", "LearnMusic", "Ginome", "dacswan", "DarkSaturn1983", "Parlnock", "natplaysstuff", "RayMusica");
@@ -91106,6 +91112,22 @@
             user = new User();
             user.name = "Turkomachine";
             user.friends.push("Manny", "Prosolis", "Neo_sis", "Maya", "Heathie", "Piefluff", "Chocol33t", "RachelGraceViolin", "Firamiel", "Yara");
+            users.push(user);
+            user = new User();
+            user.name = "Zossy";
+            user.friends.push("Prosolis", "LearnMusic", "Piefluff", "Neo_Sis", "Pixaul", "Yara", "DRad", "Turkomachine", "Seven Senshi", "OrchKeystra");
+            users.push(user);
+            user = new User();
+            user.name = "Tay Heavengreen";
+            user.friends.push("Arighi_Violin", "Alud Eleniza", "RachelGraceViolin", "Firamiel", "Manny", "Turkomachine", "DRad", "Chocol33t", "ManhandsLizzie", "King Zawa");
+            users.push(user);
+            user = new User();
+            user.name = "Maya";
+            user.friends.push("Piefluff", "ViciousP85", "Turkomachine", "DRADPunx", "LearnMusic", "Composey", "MrXyden", "Neo_Sis", "Pixaul", "Newbaroque");
+            users.push(user);
+            user = new User();
+            user.name = "BeanAwake";
+            user.friends.push("MeowsicalVGM");
             users.push(user);
             return users;
         }
