@@ -91030,7 +91030,7 @@
             }
         }
         _showEnding() {
-            (this.viewWidth < 600) ? 45 : 70;
+            (this.viewWidth < 600) ? 35 : 70;
             let tf = new Text("Thank you, SPG!!!", {
                 fontSize: 70,
                 fontFamily: "Exo 2, sans-serif",
@@ -91102,6 +91102,10 @@
             user = new User();
             user.name = "Firamiel";
             user.friends.push("Piefluff", "Turkomachine", "TheBlackCladWanderer", "AnotherInuFan", "Alud", "DRad", "Babymage", "Prosolis", "Parlnock", "Taledhar");
+            users.push(user);
+            user = new User();
+            user.name = "Turkomachine";
+            user.friends.push("RachelGraceViolin", "Prosolis", "Neo_sis", "Maya", "Heathie", "Piefluff", "Chocol33t", "Manny", "Firamiel", "Yara");
             users.push(user);
             return users;
         }
