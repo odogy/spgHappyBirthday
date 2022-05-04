@@ -91082,7 +91082,7 @@
             let users = [];
             let user = new User();
             user.name = "RecorderGuy";
-            user.friends.push("Chocol33t", "AludEleniza", "Yara", "Meowsical", "Neo_Sis", "Pixaul", "RayMusica", "RachelGraceViolin", "Turkomachine", "Prosolis");
+            user.friends.push("Chocol33t", "Ludydude", "Yara", "Meowsical", "Neo_Sis", "Pixaul", "RayMusica", "RachelGraceViolin", "Turkomachine", "Prosolis");
             users.push(user);
             user = new User();
             user.name = "Yara";
@@ -91122,7 +91122,7 @@
             users.push(user);
             user = new User();
             user.name = "Firamiel";
-            user.friends.push("Piefluff", "Turkomachine", "TheBlackCladWanderer", "AnotherInuFan", "Alud", "DRad", "Babymage", "Prosolis", "Parlnock", "Taledhar");
+            user.friends.push("Turkomachine", "TheBlackCladWanderer", "Piefluff", "AnotherInuFan", "Alud", "DRad", "Babymage", "Prosolis", "Parlnock", "Taledhar");
             users.push(user);
             user = new User();
             user.name = "Turkomachine";
@@ -91149,8 +91149,12 @@
             user.friends.push("MeowsicalVGM");
             users.push(user);
             user = new User();
+            user.name = "Alud";
+            user.friends.push("Chocol33t", "Turkomachine", "RachelGraceViolin", "Prosolis", "Parlnock", "Newbaroque", "King Zawa", "Piefluff", "Orchkeystramusic", "Firamiel");
+            users.push(user);
+            user = new User();
             user.name = "Pixaul";
-            user.friends.push("GFP");
+            user.friends.push("Turkomachine", "GFP", "HawkSixPhoenix", "Taledhar", "Prosolis", "Parlnock", "YaraBasketStar", "Piefloof", "Alud", "SPEE GEEE");
             users.push(user);
             return users;
         }
