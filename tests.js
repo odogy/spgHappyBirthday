@@ -90985,9 +90985,10 @@
             this._friendInterval = this.audioDuration / (namePairs.length / 2);
         }
         _displayFriends(name1, name2) {
+            let fontSize = (this.viewWidth < 600) ? 30 : 45;
             let tf = new Text(name1 + " and \n" + name2, {
                 // fontFamily: "Arial",
-                fontSize: 45,
+                fontSize: fontSize,
                 fontFamily: "Exo 2, sans-serif",
                 align: "center"
             });
@@ -91029,6 +91030,7 @@
             }
         }
         _showEnding() {
+            (this.viewWidth < 600) ? 45 : 70;
             let tf = new Text("Thank you, SPG!!!", {
                 fontSize: 70,
                 fontFamily: "Exo 2, sans-serif",
@@ -91063,6 +91065,48 @@
         }
     }
 
+    class SpgData {
+        getUsers() {
+            let users = [];
+            let user = new User();
+            user.name = "RecorderGuy";
+            user.friends.push("Chocol33t", "AludEleniza", "YaraDijkstar", "Piefluff", "Neo_Sis", "Pixaul", "RayMusica", "RachelGraceViolin", "TurkoMachine", "Prosolis");
+            users.push(user);
+            user = new User();
+            user.name = "Yara";
+            user.friends.push("Neo_Sis", "Pixaul", "MrXyden", "Chocol33t", "RecorderGuy", "Firamiel", "Turkomachine", "Prosolis", "Piefluff", "RayMusica");
+            users.push(user);
+            user = new User();
+            user.name = "ViciousP85";
+            user.friends.push("AnotherInuFan", "Heathiekins", "Turkomachine", "Prosolis", "HawkSixPhoenix", "Neo_Sis", "RachelGraceViolin", "JoPlaysViolin", "Stblessedbretzel", "Piefluff");
+            users.push(user);
+            user = new User();
+            user.name = "Radataz";
+            user.friends.push("NewBaroque", "Piefluff", "Firamiel", "Eravida", "HawkSixPhoenix", "Chocol33t", "Yara", "Neo_Sis", "RecorderGuy", "Pixaul");
+            user = new User();
+            user.name = "Taledhar";
+            user.friends.push("TheBlackCladWanderer", "Regent", "Babymage03", "LearnMusic", "Ginome", "dacswan", "DarkSaturn1983", "Parlnock", "natplaysstuff", "RayMusica");
+            users.push(user);
+            user = new User();
+            user.name = "RachelGraceViolin";
+            user.friends.push("Turkomachine", "AludEleniza", "YaraDijkstar", "King_Zawa", "Orchkeystramusic", "Recorderguy", "Piefluff", "Firamiel", "Nescello", "Seven_Senshi");
+            users.push(user);
+            user = new User();
+            user.name = "Neo_Sis";
+            user.friends.push("RachelGraceViolin", "Firamiel", "dRadPunx", "Piefluff", "Newbaroque", "Doctor1297", "Turkomachine", "Kyatto_Man/LegendaryCatman79", "EraVida", "Prosolis");
+            users.push(user);
+            user = new User();
+            user.name = "Heathie";
+            user.friends.push("Piefluff", "The Neo_Sis-Pixaul duo", "Turko", "Choco", "Newbaroque", "Alud", "dRad", "Babymage", "Vladislav", "Yara");
+            users.push(user);
+            user = new User();
+            user.name = "Firamiel";
+            user.friends.push("Piefluff", "Turkomachine", "TheBlackCladWanderer", "AnotherInuFan", "Alud", "DRad", "Babymage", "Prosolis", "Parlnock", "Taledhar");
+            users.push(user);
+            return users;
+        }
+    }
+
     class SpgApp {
         constructor() {
             this._users = [];
@@ -91070,7 +91114,8 @@
         }
         _init() {
             return __awaiter$5(this, void 0, void 0, function* () {
-                yield this._loadData();
+                // await this._loadData();
+                this._users = new SpgData().getUsers();
                 this._createStage();
                 this._startShow();
             });
@@ -91094,6 +91139,11 @@
                     let user = new User();
                     user.name = name;
                     this._data = this._data.substring(nameEndIdx + 15);
+                    if (this._data.startsWith("</span>")) {
+                        let ending = this._data.indexOf(":normal");
+                        this._data = this._data.substring(ending + 10);
+                        console.log(this._data[0]);
+                    }
                     console.log(user.name + " is friends with...\n");
                     while (true) {
                         let friend = this._getNextFriend();
