@@ -90933,6 +90933,7 @@
             this._lastFriendDisplayTime = 0;
             this._tweens = [];
             this._endingMessageShown = false;
+            this._lastY = -500;
             this.audioDuration = 244000;
             this._onAnimationFrame = () => {
                 if (this._pairsIndex < this._namePairs.length - 1) {
@@ -90990,9 +90991,15 @@
                 fontFamily: "Exo 2, sans-serif",
                 align: "center"
             });
+            while (true) {
+                tf.y = Math.random() * (this.viewHeight - 110) + 10;
+                if (Math.abs(tf.y - this._lastY) > 100) {
+                    break;
+                }
+            }
+            this._lastY = tf.y;
             let stage = this._pixiApp.stage;
             tf.x = Math.random() * (this.viewWidth - tf.width - 30) + 15;
-            tf.y = Math.random() * (this.viewHeight - 110) + 10;
             tf.alpha = 0;
             let tween = new Tween(tf)
                 .to({ alpha: 1.0 }, 3000)

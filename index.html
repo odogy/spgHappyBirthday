@@ -43,6 +43,7 @@
 			display:flex;
 			justify-content: center;
 			align-items: center;
+			padding: 10px;
 		}
 		
 		#intro {
@@ -68,9 +69,27 @@
 			font-size: 24px;
 		}
 		
+		@media screen and (min-width: 1200px) {
+			#intro {
+				max-width: 600px;
+			}
+			
+			#introHeader {
+				font-size: 34px;
+			}
+			
+			#introBody {
+				font-size: 24px;
+			}
+			
+			#introStart > button {
+				font-size: 28px;
+			}
+		}
+		
 		#appContainer {
 			width: 100%;
-			height: 100%;
+			height: calc(100% - 5px);
 			display: none;
 		}
 	</style>
@@ -86,8 +105,8 @@
 				some way to show you just how significant this is. So we invited
 				members of this community to name 10 friends they believe they would never
 				have met if StringPlayerGamer was not a part of this world. As you might
-				guess, limiting to only 10 was really hard! Our lives are rich with
-				friendships for which you helped lay the foundation. Please click Start
+				guess, limiting ourselves to only 10 was really hard! Our lives are rich with
+				friendships that you helped lay the foundation for. Please click Start
 				to see a tiny fraction of the friendships that exist because of you.
 			</div>
 			<div id="introStart">
