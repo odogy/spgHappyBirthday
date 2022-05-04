@@ -91030,9 +91030,9 @@
             }
         }
         _showEnding() {
-            (this.viewWidth < 600) ? 35 : 70;
+            let fontSize = (this.viewWidth < 600) ? 45 : 70;
             let tf = new Text("Thank you, SPG!!!", {
-                fontSize: 70,
+                fontSize: fontSize,
                 fontFamily: "Exo 2, sans-serif",
                 align: "center"
             });
